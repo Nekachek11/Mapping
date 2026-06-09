@@ -85,8 +85,9 @@
     graph: AirAlarm
     node: air_alarm
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Destructible
     thresholds:
       - trigger:
@@ -110,6 +111,12 @@
     guides:
     - AirAlarms
     - DeviceMonitoringAndControl
+# Erida start
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+# Erida end
 
 - type: entity
   parent: BaseWallmountMetallic

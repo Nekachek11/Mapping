@@ -9,12 +9,12 @@ using Robust.Shared.Input.Binding;
 
 namespace Content.Client.Decals;
 
-public sealed class DecalCopySystem : EntitySystem
+public sealed partial class DecalCopySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
-    [Dependency] private readonly DecalPlacementSystem _decalPlacementSystem = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly InputSystem _inputSystem = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private DecalPlacementSystem _decalPlacementSystem = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private InputSystem _inputSystem = default!;
 
     public Action<Color> UpdateClientColorAction = default!;
     public Action UpdateClientCopyButtonAction = default!;
@@ -55,22 +55,6 @@ public sealed class DecalCopySystem : EntitySystem
 
                 _decalPlacementSystem.SetActive(true);
 
-                return true;
-            }))
-            // RMB
-            .Bind(EngineKeyFunctions.EditorCancelPlace, command: new PointerStateInputCmdHandler(
-            (session, coords, uid) =>
-            {
-                if (!_isActive)
-                    return false;
-
-                SetActive(false);
-
-                _decalPlacementSystem.SetActive(true);
-
-                return true;
-            }, (session, coords, uid) =>
-            {
                 return true;
             }))
             // NUM9

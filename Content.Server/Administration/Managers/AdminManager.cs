@@ -24,16 +24,18 @@ namespace Content.Server.Administration.Managers
 {
     public sealed partial class AdminManager : IAdminManager, IPostInjectInit, IConGroupControllerImplementation
     {
-        [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly IServerDbManager _dbManager = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IServerNetManager _netMgr = default!;
-        [Dependency] private readonly IConGroupController _conGroup = default!;
-        [Dependency] private readonly IResourceManager _res = default!;
-        [Dependency] private readonly IServerConsoleHost _consoleHost = default!;
-        [Dependency] private readonly IChatManager _chat = default!;
-        [Dependency] private readonly ToolshedManager _toolshed = default!;
-        [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private IPlayerManager _playerManager = default!;
+        [Dependency] private IServerDbManager _dbManager = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IServerNetManager _netMgr = default!;
+        [Dependency] private IConGroupController _conGroup = default!;
+        [Dependency] private IResourceManager _res = default!;
+        [Dependency] private IServerConsoleHost _consoleHost = default!;
+        [Dependency] private IChatManager _chat = default!;
+        [Dependency] private ToolshedManager _toolshed = default!;
+        [Dependency] private ILogManager _logManager = default!;
+        [Dependency] private IEntityManager _entityManager = default!; // Erida edit
+        private ReadminLogging? _readminLogging; // Erida edit
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
@@ -91,6 +93,8 @@ namespace Content.Server.Administration.Managers
 
             UpdateDatabaseDeadminnedState(session, true);
             reg.Data.Active = false;
+
+            _readminLogging!.TryDiscordLog(session, false); // Erida edit
 
             SendPermsChangedEvent(session);
             UpdateAdminStatus(session);
@@ -178,6 +182,8 @@ namespace Content.Server.Administration.Managers
                     ("newAdminName", session.Name)), flagWhitelist: AdminFlags.Stealth);
             }
 
+            _readminLogging!.TryDiscordLog(session, true); // Erida edit
+
             SendPermsChangedEvent(session);
             UpdateAdminStatus(session);
         }
@@ -250,6 +256,8 @@ namespace Content.Server.Administration.Managers
         public void Initialize()
         {
             _sawmill = _logManager.GetSawmill("admin");
+
+            _readminLogging = _entityManager.System<ReadminLogging>();
 
             _netMgr.RegisterNetMessage<MsgUpdateAdminStatus>();
 
@@ -355,7 +363,7 @@ namespace Content.Server.Administration.Managers
             }
             else if (e.NewStatus == SessionStatus.Disconnected)
             {
-                if (_admins.Remove(e.Session, out var reg ) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
+                if (_admins.Remove(e.Session, out var reg) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
                 {
                     if (reg.Data.Stealth)
                     {
@@ -365,6 +373,7 @@ namespace Content.Server.Administration.Managers
                     }
                     else
                     {
+                        _readminLogging!.TryDiscordLog(e.Session, false); // Erida edit
                         _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
                             ("name", e.Session.Name)));
                     }
@@ -406,6 +415,8 @@ namespace Content.Server.Administration.Managers
                     }
                     else
                     {
+                        _readminLogging!.TryDiscordLog(session, true); // Erida edit
+
                         _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-login-message",
                             ("name", session.Name)));
                     }
@@ -487,7 +498,7 @@ namespace Content.Server.Administration.Managers
                     Active = !dbData.Deadminned,
                 };
 
-                if (dbData.Title != null  && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
+                if (dbData.Title != null && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
                 {
                     data.Title = dbData.Title;
                 }

@@ -1,3 +1,4 @@
+Order: -1
 Entries:
 - author: Sidzaru
   changes:
@@ -630,3 +631,243 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/354
   avatar_url: https://avatars.githubusercontent.com/u/250869396?v=4
   title: Mining
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: ShadowDance - Кошмар теперь уклоняется от снарядов в темноте
+    - type: Add
+      message: >-
+        Шкафчики теперь защищают от света! (Убедитесь, что внутри нет
+        включённого фонаря!)
+    - type: Add
+      message: Кошмара теперь нельзя связать наручниками
+    - type: Add
+      message: Кошмар получил планку максимально получаемого урона от света
+    - type: Add
+      message: Кошмар теперь получает урон от вспышки
+    - type: Add
+      message: >-
+        Вместо звукового оповещения появилась иконка, что показывается,
+        находится ли Кошмар в тени
+  id: 56
+  time: '2026-05-04T16:53:26.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/351
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Nightmare update
+- author: Nekachek
+  changes:
+    - type: Fix
+      message: Телепорт призраков и спавн гостов на Train
+  id: 57
+  time: '2026-05-04T16:55:07.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/359
+  avatar_url: https://avatars.githubusercontent.com/u/279228227?v=4
+  title: FixTrain
+- author: Pexel250
+  changes:
+    - type: Fix
+      message: Французский акцент
+  id: 58
+  time: '2026-05-06T18:15:03.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/357
+  avatar_url: https://avatars.githubusercontent.com/u/184319116?v=4
+  title: translation French accent
+- author: Tiwulovoe
+  changes:
+    - type: Add
+      message: Добавлено веселье для ивента.
+  id: 59
+  time: '2026-05-06T20:04:45.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/360
+  avatar_url: https://avatars.githubusercontent.com/u/250869396?v=4
+  title: Ee
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Кошмар больше не видит сквозь стены в джаунте
+    - type: Fix
+      message: Кошмар больше не спотыкается об стулья
+  id: 60
+  time: '2026-05-07T16:44:47.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/362
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: NightmareUpdate
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Изменено стартовое снаряжение АВД
+    - type: Tweak
+      message: Фелениды больше не носят насильно OwO акцент
+    - type: Fix
+      message: Клоны теперь копируют голос
+  id: 61
+  time: '2026-05-08T16:56:58.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/363
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: IAA + felinid + clone update
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: Из лисы Капитана при разделке вновь падают телекристаллы
+  id: 62
+  time: '2026-05-08T21:34:06.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/366
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Make Renault Great Again
+- author: vanomorodellefake
+  changes:
+    - type: Fix
+      message: >-
+        Вернул феленидам по стандарту OwOAccent, но теперь он удаляется при
+        помощи трейта отсутствие акцента
+  id: 63
+  time: '2026-05-09T11:03:40.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/368
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: OwOAccent Fix
+- author: vanomorodellefake
+  changes:
+    - type: Fix
+      message: Никакой ботаники в принтере схем
+  id: 64
+  time: '2026-05-09T11:12:31.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/367
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: No botany in CircuitImprinter
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Добавлены стан резисты всем скафандрам и бронежилетам
+    - type: Tweak
+      message: Большинство жилетов СБ имеют одинаковую защиту
+    - type: Tweak
+      message: Увеличена колющая защита у элитного жилета из аплинка
+    - type: Tweak
+      message: >-
+        Гуардиан теперь имеет лишь 10 дроби в запасе, а скорострельность
+        понижена на 20%
+    - type: Tweak
+      message: UTAP Mark 1 получил увеличение скорострельности на 20%
+  id: 65
+  time: '2026-05-09T23:31:10.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/369
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Armor rebalance
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: Добавил крылья от Evgenimation
+    - type: Tweak
+      message: Заменены текстуры людей и феленидов на новые от Evgenimation
+  id: 66
+  time: '2026-05-11T19:19:09.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/371
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: New Wings and Textures for felinid and human
+- author: Cat_L
+  changes:
+    - type: Add
+      message: >-
+        У ИИ и админ-госта добавлен интерфейс атмосферной сигнализации и
+        контроля питании
+    - type: Add
+      message: 'Ядро ИИ способен воспроизводить MIDI файлы  '
+    - type: Add
+      message: Добавлен предсмертный звук ИИ
+  id: 67
+  time: '2026-05-11T19:26:10.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/370
+  avatar_url: https://avatars.githubusercontent.com/u/215692115?v=4
+  title: '[Add] AI Increased capabilities'
+- author: vanomorodellefake
+  changes:
+    - type: Fix
+      message: Кошмар больше не страдает от действий агостов, связанных с фонарями
+    - type: Fix
+      message: Фонарики в рюкзаках больше не затрагивают Кошмара
+  id: 68
+  time: '2026-05-11T19:28:23.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/372
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Nightmare Bug Fixes
+- author: Kat_L
+  changes:
+    - type: Fix
+      message: Доработка локализации
+    - type: Fix
+      message: Доступно возведение направленных уран. окон и бронированного варианта
+    - type: Fix
+      message: Возвращена возможность крафта мед-охранного визора
+    - type: Fix
+      message: Медицинский визор возвращён в "Интегрированные интерфейсы"
+    - type: Fix
+      message: Аварийная сигнальная ракета горит корректно дольше
+  id: 69
+  time: '2026-05-15T21:31:12.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/373
+  avatar_url: https://avatars.githubusercontent.com/u/215692115?v=4
+  title: '[Fix] Omega fixs'
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Возвращены старые текстуры кастомизации унатхов
+  id: 70
+  time: '2026-05-23T13:50:03.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/375
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Return of Old Textures Customization Lizard
+- author: Spectrum2k
+  changes:
+    - type: Tweak
+      message: Дракон немного ослаблен.
+    - type: Add
+      message: >-
+        Добавлена возможность отключить HRTF Audio в настройках (нужно если вам
+        не нравится звук после обновления).
+    - type: Fix
+      message: Автозамена сокращений снова работает.
+    - type: Fix
+      message: Черты внешности снова работают.
+    - type: Fix
+      message: >-
+        Меню персонализации теперь нормально сохраняется, и не запрашивает
+        сохранение при каждом закрытии.
+    - type: Fix
+      message: >-
+        Меню персонализации теперь не меняет размер превью персонажа во время
+        его настройки.
+  id: 71
+  time: '2026-05-23T16:47:21.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/377
+  avatar_url: https://avatars.githubusercontent.com/u/49170788?v=4
+  title: Upstream fixes
+- author: Cat_L
+  changes:
+    - type: Fix
+      message: Звуковой вывод эмоции рас
+    - type: Fix
+      message: Отображение спрайтов написанных / заштампованных бумаг
+    - type: Fix
+      message: раздвижные окна снова могут закрываться внутри объекта
+    - type: Tweak
+      message: >-
+        РСУ устройства способны демонтировать атмос трубы, датчики воздуха и
+        сигнализации
+    - type: Tweak
+      message: Доступ ГСБ способен разблокировать РСУ техника СБ
+  id: 72
+  time: '2026-05-30T20:41:23.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/379
+  avatar_url: https://avatars.githubusercontent.com/u/215692115?v=4
+  title: '[Fix] Bug report response №1'
+- author: Tiwulovoe
+  changes:
+    - type: Tweak
+      message: Кроваво-красный скафандр теперь имеет адекватные резисты 60 -> 50
+    - type: Tweak
+      message: Резисты скафандра БЩ немного повышены
+  id: 73
+  time: '2026-05-30T20:45:25.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/374
+  avatar_url: https://avatars.githubusercontent.com/u/250869396?v=4
+  title: f

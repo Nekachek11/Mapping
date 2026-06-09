@@ -15,7 +15,6 @@
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
-  canBeAntag: false
   access:
   - Security
   - Brig
@@ -34,6 +33,7 @@
     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
+    pocket1: RubberStampIAA
     pocket2: BookSpaceLaw
 
 - type: chameleonOutfit
